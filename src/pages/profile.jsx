@@ -3,6 +3,7 @@ import { auth } from "../firebase";
 import {
   signInWithEmailAndPassword,
   signOut,
+  createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
 import "../styles/profile.css";
@@ -11,7 +12,9 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState(""); // Added for signup
   const [errorMsg, setErrorMsg] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false); // Toggle between login and signup
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {
@@ -27,6 +30,22 @@ const Profile = () => {
       setErrorMsg("");
     } catch (error) {
       setErrorMsg("Invalid credentials or user does not exist.");
+      console.log(error);
+    }
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setErrorMsg("Passwords do not match.");
+      return;
+    }
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      setErrorMsg("");
+    } catch (error) {
+      setErrorMsg("Failed to create an account.");
+      console.log(error);
     }
   };
 
@@ -50,9 +69,9 @@ const Profile = () => {
           </button>
         </div>
       ) : (
-        <div className="login-form">
-          <h3>Please Login</h3>
-          <form onSubmit={handleLogin}>
+        <div className="auth-form">
+          <h3>{isSignUp ? "Create an Account" : "Please Login"}</h3>
+          <form onSubmit={isSignUp ? handleSignUp : handleLogin}>
             <input
               type="email"
               placeholder="Email"
@@ -67,9 +86,26 @@ const Profile = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type="submit">Login</button>
+            {isSignUp && (
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            )}
+            <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
           </form>
           {errorMsg && <p className="error-msg">{errorMsg}</p>}
+          <button
+            className="toggle-form-btn"
+            onClick={() => setIsSignUp(!isSignUp)}
+          >
+            {isSignUp
+              ? "Already have an account? Login"
+              : "Don't have an account? Sign Up"}
+          </button>
         </div>
       )}
     </section>
