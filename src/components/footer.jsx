@@ -13,9 +13,8 @@ const Footer = () => {
       <div className="footer-section">
         <h4>Quick Links</h4>
         <a href="/">Home</a>
-        <a href="/voting">Vote</a>
+
         <a href="/news">News About Us</a>
-        <a href="/initiative">Initiatives</a>
       </div>
 
       <div className="footer-logo">
@@ -51,6 +50,23 @@ const Footer = () => {
             <FaLinkedinIn />
           </a>
         </div>
+        <a
+          href="/initiative"
+          style={{
+            color: "var(--text-color)",
+            textDecoration: "none",
+            fontWeight: 500,
+            transition: "color 0.3s ease",
+            marginTop: "1rem",
+            display: "inline-block",
+            padding: "0.5rem 1rem",
+            borderRadius: "4px",
+          }}
+          onMouseEnter={(e) => (e.target.style.color = "var(--accent-color)")}
+          onMouseLeave={(e) => (e.target.style.color = "var(--text-color)")}
+        >
+          Initiatives
+        </a>
       </div>
 
       <div className="footer-section right">
