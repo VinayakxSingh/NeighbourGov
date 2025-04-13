@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -50,8 +51,8 @@ const Footer = () => {
             <FaLinkedinIn />
           </a>
         </div>
-        <a
-          href="/initiative"
+        <Link
+          to="/initiative"
           style={{
             color: "var(--text-color)",
             textDecoration: "none",
@@ -66,7 +67,7 @@ const Footer = () => {
           onMouseLeave={(e) => (e.target.style.color = "var(--text-color)")}
         >
           Initiatives
-        </a>
+        </Link>
       </div>
 
       <div className="footer-section right">

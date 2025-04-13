@@ -11,35 +11,12 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    padding: 1rem;
-    align-items: center;
-  }
-
-  .footer-section {
-    width: 100%;
-    text-align: center;
-  }
-
-  .footer-section.right {
-    text-align: center;
-  }
-
-  .footer-logo h2 {
-    font-size: 1.5rem;
-  }
-
-  .footer-section.right p {
-    font-size: 0.85rem;
-  }
-}
-
+/* General styles for footer sections */
 .footer-section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 20px; /* Add some spacing between sections */
 }
 
 .footer-section a {
@@ -53,9 +30,11 @@
   color: var(--accent-color);
 }
 
+/* Footer Logo Styles */
 .footer-logo {
   text-align: center;
-  flex: 1;
+  flex: 1 1 100%; /* Make the logo take full width */
+  margin-bottom: 20px; /* Add spacing below the logo */
 }
 
 .footer-logo h2 {
@@ -73,8 +52,9 @@
   color: var(--text-secondary);
 }
 
+/* Right Section Styles */
 .footer-section.right {
-  text-align: right;
+  text-align: center; /* Center text for better mobile display */
   font-size: 0.85rem;
 }
 
@@ -84,11 +64,18 @@
   color: var(--text-color);
 }
 
+.footer-section.right p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 100%; /* Adjust max-width for smaller screens */
+}
+
+/* Social Icons Styles */
 .footer-socials {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
-  position: relative;
   gap: 1rem;
 }
 
@@ -102,11 +89,26 @@
   color: var(--accent-color);
 }
 
-.footer-section.right p {
-  margin-bottom: 0.5rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  max-width: 240px;
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack the content vertically */
+    padding: 20px; /* Reduce padding for smaller screens */
+    text-align: center; /* Center align text */
+  }
+
+  .footer-section {
+    width: 100%; /* Each section takes full width */
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px; /* Add spacing below the logo */
+  }
+
+  .footer-section.right {
+    text-align: center;
+  }
 }
 
 /* Dark theme specific adjustments */
