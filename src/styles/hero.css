@@ -14,6 +14,13 @@
   color: var(--text-color);
 }
 
+@media (max-width: 768px) {
+  .hero-container {
+    height: 70vh;
+    background-position: 65% center;
+  }
+}
+
 .hero-container::before {
   content: "";
   position: absolute;
@@ -35,6 +42,14 @@
   box-shadow: 0 4px 8px var(--shadow-color);
 }
 
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 90%;
+    padding: 15px;
+    margin: 0 10px;
+  }
+}
+
 .hero-content h1 {
   font-family: "Lato", sans-serif;
   font-weight: 800;
@@ -45,6 +60,13 @@
   background: transparent;
 }
 
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
 .hero-content p {
   font-family: "Syne", sans-serif;
   font-size: 1.3rem;
@@ -52,6 +74,12 @@
   color: var(--text-secondary, #f0f0f0);
   text-shadow: 1px 1px 6px var(--shadow-color);
   background: transparent;
+}
+
+@media (max-width: 768px) {
+  .hero-content p {
+    font-size: 1rem;
+  }
 }
 
 /* Light theme specific adjustments */
