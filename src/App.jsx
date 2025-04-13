@@ -2,16 +2,16 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components and Pages
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
+import Home from "./pages/home.jsx";
 import Initiative from "./pages/initiative";
-import VotingPage from "./pages/Voting";
-import Notifications from "./pages/notifications";
-import News from "./pages/News";
-import Profile from "./pages/Profile";
+import VotingPage from "./pages/Voting.jsx";
+import Notifications from "./pages/notifications.jsx";
+import News from "./pages/news.jsx";
+import Profile from "./pages/profile.jsx";
 import ThemeToggleButton from "./components/themetogglebutton";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 function App() {
   return (
     <Router>
