@@ -24,13 +24,13 @@
 
 ### 📰 News & Updates Page
 
-**[Placeholder for News Page Screenshot]**
+![News Page](./screenshots/news.png)
 
 - **Description:** This page showcases recent news articles, announcements, and media coverage related to the NeighbourGov platform and its impact on local communities. Expect to see a clean, retro-inspired layout with clear headlines and concise summaries.
 
 ### 🗳️ Community Voting Page
 
-**[Placeholder for Voting Page Screenshot]**
+![Voting Page](./screenshots/vote.png)
 
 - **Description:** The voting page displays a list of active initiatives with clear descriptions and a prominent voting interface. Authenticated users can easily cast their vote for the solutions they believe in. The design maintains the platform's signature black-and-white aesthetic.
 
