@@ -12,6 +12,7 @@ import News from "./pages/news.jsx";
 import Profile from "./pages/profile.jsx";
 import ThemeToggleButton from "./components/themetogglebutton";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import Voting from "./components/voting.jsx";
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/voting" element={<Voting />}></Route>
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/news" element={<News />} />
         <Route path="/profile" element={<Profile />} />

@@ -1,0 +1,70 @@
+/* voting.css */
+
+.voting-container {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #f7f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voting-content {
+  max-width: 800px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.voting-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.voting-description {
+  font-size: 1.125rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.voting-instruction {
+  font-size: 1rem;
+  color: #333;
+}
+
+.initiative-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.initiative-link:hover {
+  border-color: #2563eb;
+}
+
+/* Optional: If you use the image later */
+.voting-image {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
